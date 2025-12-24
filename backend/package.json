@@ -8,7 +8,7 @@
     "dev": "nodemon server.js"
   },
   "keywords": ["expense-tracker", "finance", "mern", "api", "mongodb"],
-  "author": "Your Name",
+  "author": "Debasish",
   "license": "MIT",
   "type": "commonjs",
   "dependencies": {
