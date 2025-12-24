@@ -14,7 +14,15 @@ const connectDB = async () => {
         console.log(`📊 Database: ${mongoose.connection.name}`);
     } catch (err){
         console.error("❌ Error connecting to MongoDB:", err.message);
-        process.exit(1);
+        console.error("\n⚠️  MongoDB Connection Failed!");
+        console.error("📋 Please ensure MongoDB is running:");
+        console.error("   - Local: Start MongoDB service");
+        console.error("   - Cloud: Use MongoDB Atlas (free tier available)");
+        console.error("   - Update MONGO_URI in backend/.env");
+        console.error("\nℹ️  For now, the server will continue without database connection.");
+        console.error("   Some features may not work until MongoDB is connected.\n");
+        // Don't exit - let server run for frontend testing
+        // process.exit(1);
     }
 }
 

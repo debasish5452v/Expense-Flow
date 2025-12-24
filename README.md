@@ -1,258 +1,149 @@
-# ExpenseFlow – Personal Finance Management System
+# 💰 ExpenseFlow - Personal Finance Management System
 
-ExpenseFlow is a full-stack MERN application designed for comprehensive financial tracking and management. Track your income and expenses, visualize spending patterns through interactive charts, and gain insights into your financial health with an intuitive dashboard interface.
+A full-stack MERN application for tracking income and expenses with interactive dashboards and data visualization.
 
-## Features
+## ✨ Features
 
-1. **User Authentication**  
-   Secure sign-up and login using JWT. User sessions are protected and persisted.
+- 🔐 **User Authentication**: Secure signup/login with JWT authentication and password hashing
+- 💵 **Income Tracking**: Add, view, and manage income sources with categories
+- 💸 **Expense Management**: Track expenses with emoji-based categorization
+- 📊 **Interactive Dashboard**: 
+  - Real-time financial overview
+  - Last 30 days expense trends
+  - Income vs Expense comparison
+  - Recent transactions history
+- 📈 **Data Visualization**: 
+  - Custom bar charts
+  - Line charts for trends
+  - Pie charts for category distribution
+- 📥 **Export to Excel**: Download income/expense data in Excel format
+- 👤 **Profile Management**: Upload and manage profile photos
+- 🎨 **Modern UI**: Beautiful, responsive design with Tailwind CSS
+- 🌙 **Dark Mode Support**: Eye-friendly dark theme
 
-2. **Dashboard Overview**  
-   View total balance, income, and expenses in summary cards, with recent transactions and financial charts.
+## 🛠️ Tech Stack
 
-3. **Income Management**  
-   - Add, view, and delete income sources.
-   - Download all income data as an Excel file.
+### Frontend
+- **React 19.1.0** - UI library
+- **Vite** - Build tool and dev server
+- **React Router DOM** - Client-side routing
+- **Axios** - HTTP client
+- **Tailwind CSS** - Utility-first CSS framework
+- **Recharts** - Chart library for data visualization
+- **React Icons** - Icon library
+- **React Hot Toast** - Toast notifications
+- **Emoji Picker React** - Emoji selector component
+- **Moment.js** - Date manipulation
 
-4. **Expense Management**  
-   - Add, view, and delete expenses with category-based tracking.
-   - Download all expense data as an Excel file.
+### Backend
+- **Node.js** - Runtime environment
+- **Express 5.1.0** - Web framework
+- **MongoDB** - NoSQL database
+- **Mongoose** - MongoDB ODM
+- **JWT (jsonwebtoken)** - Authentication tokens
+- **bcryptjs** - Password hashing
+- **Multer** - File upload handling
+- **XLSX** - Excel file generation
+- **CORS** - Cross-origin resource sharing
+- **dotenv** - Environment variable management
 
-5. **Interactive Charts**  
-   Visualize income and expenses with Bar, Pie, and Line charts for better insights.
+## 📸 Screenshots
 
-6. **Recent Transactions**  
-   Quickly access the latest income and expense records.
-
-7. **Reports**  
-   Export income and expense data to Excel for offline analysis.
-
-8. **Mobile Responsive UI**  
-   Works seamlessly across desktops, tablets, and mobile devices.
-
-9. **Intuitive Navigation**  
-   Sidebar menu for easy access to Dashboard, Income, Expenses, and Logout.
-
-10. **Quick Delete**  
-    Hover over income/expense cards to reveal a delete button for easy removal.
-
----
-
-## Tech Stack
-
-- **Frontend:** React, Vite, Tailwind CSS, Recharts, Axios, React Router, Emoji Picker  
-- **Backend:** Node.js, Express, MongoDB, Mongoose, JWT, Multer, XLSX  
-- **Authentication:** JWT (JSON Web Tokens)  
-- **File Uploads:** Multer (for profile images)  
-- **Excel Export:** XLSX
-
----
-
-## Project Structure
-
+<!-- Add your screenshots here -->
 ```
-backend/
-  config/
-  controller/
-  middlewares/
-  models/
-  routes/
-  uploads/
-  .env.example
-  server.js
+### Dashboard
+![Dashboard](./screenshots/dashboard.png)
 
-frontend/
-  expense-tracker/
-    src/
-      components/
-      context/
-      hooks/
-      pages/
-      utils/
-    index.html
-    package.json
+### Income Management
+![Income](./screenshots/income.png)
+
+### Expense Tracking
+![Expenses](./screenshots/expenses.png)
 ```
 
----
+4. Start the development server:
+```bash
+npm run dev
 
-## Getting Started
+## 💻 Usage
 
-### Prerequisites
+1. **Sign Up**: Create a new account with your name, email, and password
+2. **Login**: Access your account with your credentials
+3. **Add Income**: Navigate to the Income section and add your income sources
+4. **Track Expenses**: Go to the Expense section and record your expenses
+5. **View Dashboard**: Check your financial overview on the home page
+6. **Export Data**: Download your financial data in Excel format
+7. **Manage Profile**: Update your profile photo and information
 
-- Node.js (v18 or higher) & npm
-- MongoDB database (local or Atlas)
+## 📁 Project Structure
 
-### Installation & Setup
-
-1. **Clone the repository:**
-   ```sh
-   git clone <your-repo-url>
-   cd ExpenseFlow
-   ```
-
-2. **Backend Setup:**
-   ```sh
-   cd backend
-   npm install
-   ```
-   
-   Create a `.env` file in the backend directory:
-   ```env
-   MONGO_URI=mongodb://localhost:27017/expenseflow
-   JWT_SECRET=your_secure_jwt_secret_here
-   PORT=8000
-   CLIENT_URL=http://localhost:5173
-   ```
-
-3. **Frontend Setup:**
-   ```sh
-   cd frontend/expense-tracker
-   npm install
-   ```
-
-4. **Start the Application:**
-   
-   In one terminal (backend):
-   ```sh
-   cd backend
-   npm start
-   ```
-   
-   In another terminal (frontend):
-   ```sh
-   cd frontend/expense-tracker
-   npm run dev
-   ```
-
-5. **Access the Application:**
-   - Frontend: `http://localhost:5173`
-   - Backend API: `http://localhost:8000`
-
----
-
-## Key Features Implementation
-
-### Authentication System
-- JWT-based secure authentication with token expiry
-- Password hashing using bcryptjs
-- Protected routes with middleware authentication
-
-### Data Visualization
-- Custom chart components built with Recharts library
-- Real-time data updates and filtering
-- Responsive chart design for mobile devices
-
-### File Management
-- Multer integration for profile image uploads
-- Automatic file validation and size limiting
-- Secure file storage in uploads directory
-
-### Excel Export
-- XLSX library integration for data export
-- Custom formatting for income/expense reports
-- Date-wise transaction organization
-
----
-
-## Usage Guide
-
-### First Time Users
-1. **Sign Up:** Create a new account with email and password
-2. **Set Profile:** Upload a profile picture (optional)
-3. **Dashboard:** Navigate to view your financial overview
-
-### Managing Transactions
-- **Add Income:** Click on Income tab, fill in details, and select an emoji icon
-- **Add Expense:** Navigate to Expense section, categorize spending with emojis
-- **View Analytics:** Dashboard shows spending patterns and trends
-- **Export Data:** Download Excel reports for offline analysis
-
-### Tips for Best Experience
-- Use descriptive titles for transactions
-- Pick relevant emoji icons for quick visual identification
-- Regularly export data for backup
-- Check dashboard for spending insights
-
----
-
-## Environment Variables
-
-Backend `.env` example:
 ```
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-PORT=8000
-CLIENT_URL=http://localhost:5173
+ExpenseFlow/
+├── backend/
+│   ├── config/
+│   │   └── db.js                 # Database configuration
+│   ├── controller/
+│   │   ├── authController.js     # Authentication logic
+│   │   ├── dashboardController.js # Dashboard data
+│   │   ├── expenseController.js  # Expense operations
+│   │   └── incomeController.js   # Income operations
+│   ├── middlewares/
+│   │   ├── authMiddleware.js     # JWT verification
+│   │   └── uploadMiddleware.js   # File upload handling
+│   ├── models/
+│   │   ├── User.js               # User schema
+│   │   ├── Income.js             # Income schema
+│   │   └── Expense.js            # Expense schema
+│   ├── routes/
+│   │   ├── authRoutes.js         # Auth endpoints
+│   │   ├── dashboardRoutes.js    # Dashboard endpoints
+│   │   ├── expenseRoutes.js      # Expense endpoints
+│   │   └── incomeRoutes.js       # Income endpoints
+│   ├── uploads/                  # User uploaded files
+│   ├── .env                      # Environment variables
+│   ├── server.js                 # Server entry point
+│   └── package.json
+│
+└── frontend/
+    └── Expense-Flow/
+        ├── src/
+        │   ├── assets/           # Images and static files
+        │   ├── components/       # Reusable components
+        │   │   ├── Cards/
+        │   │   ├── Charts/
+        │   │   ├── Dashboard/
+        │   │   ├── Expense/
+        │   │   ├── Income/
+        │   │   ├── inputs/
+        │   │   └── layouts/
+        │   ├── context/          # React context
+        │   ├── hooks/            # Custom hooks
+        │   ├── pages/            # Page components
+        │   ├── utils/            # Utility functions
+        │   ├── App.jsx           # Main app component
+        │   └── main.jsx          # Entry point
+        ├── .env                  # Environment variables
+        ├── index.html
+        ├── package.json
+        └── vite.config.js
 ```
 
----
+## 👨‍💻 Author
 
-## Project Highlights
+**Debasish**
 
-### What Makes ExpenseFlow Special
+## 🙏 Acknowledgments
 
-1. **Modern Tech Stack**: Built with the latest versions of React 19, Vite 7, and Tailwind CSS 4
-2. **Secure Authentication**: Industry-standard JWT authentication with bcrypt password hashing
-3. **Rich Data Visualization**: Interactive charts using Recharts for meaningful financial insights
-4. **Excel Integration**: Export your financial data for offline analysis and record-keeping
-5. **Responsive Design**: Seamlessly works across desktop, tablet, and mobile devices
-6. **User-Centric Design**: Intuitive interface with emoji-based transaction categorization
-7. **RESTful API**: Well-structured backend following REST principles
-8. **Real-time Updates**: Instant UI updates after any transaction changes
-
-### Technical Achievements
-
-- **Component Architecture**: Reusable React components for maintainable code
-- **Custom Hooks**: Implemented custom hooks for authentication and data fetching
-- **Context API**: Efficient global state management without external libraries
-- **Middleware Pattern**: Authentication and file upload middleware for security
-- **MongoDB Aggregation**: Complex queries for dashboard analytics
-- **Error Handling**: Comprehensive error handling on both client and server
-- **Environment Configuration**: Separate development and production configs
+- React Icons for the icon library
+- Recharts for data visualization
+- Tailwind CSS for the styling framework
+- MongoDB team for the excellent database
 
 ---
+<div align="center">
+  
+### ⭐ Star this repository if you found it helpful!
 
-## Screenshots
+Made with ❤️ by Debasish
 
-### Auth pages
-![Register](frontend/expense-tracker/image.png) 
-![Login](frontend/expense-tracker/image-1.png)
-
-### Dashboard pages
-#### dashboard
-![dashboard](frontend/expense-tracker/image-2.png)
-#### income
-![income](frontend/expense-tracker/image-3.png)
-#### expense
-![alt text](frontend/expense-tracker/image-4.png)
-
----
-
-## License
-
-MIT
-
----
-
-## Acknowledgements
-
-- [React](https://react.dev/)
-- [Vite](https://vitejs.dev/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [Recharts](https://recharts.org/)
-- [Express](https://expressjs.com/)
-- [MongoDB](https://www.mongodb.com/)
-- [Mongoose](https://mongoosejs.com/)
-- [JWT](https://jwt.io/)
-- [Multer](https://github.com/expressjs/multer)
-- [XLSX](https://github.com/SheetJS/sheetjs)
-
----
-
-## Contributing
-
-Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change.
-
----
-
-**ExpenseFlow – Your Personal Finance Companion**
+</div>
