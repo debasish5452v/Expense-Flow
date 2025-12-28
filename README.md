@@ -55,12 +55,10 @@ A full-stack MERN application for tracking income and expenses with interactive 
 
 
 ### Income Management
-![Income](<img width="1349" height="597" alt="Income" src="https://github.com/user-attachments/assets/15cdaff0-5abd-49f3-b3b5-2b191d2b3126" />
-)
+<img width="1349" height="597" alt="Income" src="https://github.com/user-attachments/assets/15cdaff0-5abd-49f3-b3b5-2b191d2b3126" />
 
 ### Expense Tracking
-![Expenses](<img width="1349" height="600" alt="Expense" src="https://github.com/user-attachments/assets/7cc03df5-a7b7-43cc-9377-4caf4c13b132" />
-)
+<img width="1349" height="600" alt="Expense" src="https://github.com/user-attachments/assets/7cc03df5-a7b7-43cc-9377-4caf4c13b132" />
 
 4. Start the development server:
 bash
