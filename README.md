@@ -50,7 +50,6 @@ A full-stack MERN application for tracking income and expenses with interactive 
 ## 📸 Screenshots
 
 <!-- Add your screenshots here -->
-```
 ### Dashboard
 ![Dashboard](./screenshots/dashboard.png)
 
@@ -59,10 +58,9 @@ A full-stack MERN application for tracking income and expenses with interactive 
 
 ### Expense Tracking
 ![Expenses](./screenshots/expenses.png)
-```
 
 4. Start the development server:
-```bash
+bash
 npm run dev
 
 ## 💻 Usage
