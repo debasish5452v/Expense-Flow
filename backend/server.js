@@ -46,6 +46,31 @@ app.get('/', (req, res) => {
 });
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => {
+
+// Start server
+const server = app.listen(port, () => {
     console.log(`🚀 ExpenseFlow API server running on port ${port}`)
-})
+});
+
+// Handle unhandled promise rejections
+process.on('unhandledRejection', (err) => {
+    console.error('❌ Unhandled Promise Rejection:', err.message);
+    console.error(err);
+    // Keep server running even on unhandled rejections
+});
+
+// Handle uncaught exceptions
+process.on('uncaughtException', (err) => {
+    console.error('❌ Uncaught Exception:', err.message);
+    console.error(err);
+    // Keep server running even on uncaught exceptions
+});
+
+// Graceful shutdown
+process.on('SIGTERM', () => {
+    console.log('👋 SIGTERM received. Shutting down gracefully...');
+    server.close(() => {
+        console.log('✅ Server closed');
+        process.exit(0);
+    });
+});
