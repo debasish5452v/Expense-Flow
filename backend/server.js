@@ -15,9 +15,32 @@ const dashboardRoutes = require("./routes/dashboardRoutes.js")
 // This enables the React frontend to communicate with the Express backend
 app.use(
     cors({
-        origin: process.env.CLIENT_URL || "*",
+        origin: function (origin, callback) {
+            // Allow requests with no origin (like mobile apps or Postman)
+            if (!origin) return callback(null, true);
+            
+            // Allow all Vercel deployment URLs and the configured CLIENT_URL
+            const allowedOrigins = [
+                process.env.CLIENT_URL,
+                /^https:\/\/expense-flow.*\.vercel\.app$/,  // All Vercel preview deployments
+            ];
+            
+            // Check if origin matches any allowed pattern
+            const isAllowed = allowedOrigins.some(pattern => {
+                if (typeof pattern === 'string') return pattern === origin;
+                if (pattern instanceof RegExp) return pattern.test(origin);
+                return false;
+            });
+            
+            if (isAllowed) {
+                callback(null, true);
+            } else {
+                callback(new Error('Not allowed by CORS'));
+            }
+        },
         methods: ["GET", "POST", "PUT", "DELETE"],
         allowedHeaders: ["Content-type", "Authorization"],
+        credentials: true
     })
 )
 
