@@ -3,7 +3,7 @@
 A full-stack MERN application for tracking income and expenses with interactive dashboards and data visualization.
 
 ## ✨ Features
-
+ 
 - 🔐 **User Authentication**: Secure signup/login with JWT authentication and password hashing
 - 💵 **Income Tracking**: Add, view, and manage income sources with categories
 - 💸 **Expense Management**: Track expenses with emoji-based categorization
